@@ -8,14 +8,14 @@ export default function EditPost() {
     const navigate = useNavigate()
 
     useEffect(() => {
-        if(slug){
-            appwriteService.getPost((slug).then((post)=>{
-                if(post){
+         if (slug) {
+            appwriteService.getPost(slug).then((post) => {
+                if (post) {
                     setPosts(post)
                 }
-            }))
-        }else{
-            navigate('/post')
+            })
+        } else {
+            navigate('/')
         }
     }, [slug,navigate])
     return post ? (
